@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - FastGoodCuisine</title>
+    <link rel="stylesheet" href="../styles/RegisterPage.css">
+</head>
+<body>
+<div class="container">
+    <div class="register-card">
+        <div class="header">
+            <h1>FastGoodCuisine</h1>
+            <p>Rejoignez notre communauté de passionnés de cuisine</p>
+        </div>
+
+        <form class="register-form" action="/" method="POST">
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password_confirm">Confirmer le mot de passe</label>
+                <input type="password" id="password_confirm" name="password_confirm" required>
+            </div>
+
+            <button type="submit" class="btn-submit">S'inscrire</button>
+
+            <div class="login-link">
+                Vous avez déjà un compte ? <a href="">Se connecter</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
