@@ -11,6 +11,7 @@ import (
 func StartServer() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", handlers.RegisterHandler)
+	r.HandleFunc("/login", handlers.LoginHandler)
 
 	fs := http.FileServer(http.Dir("./web/styles"))
 	r.PathPrefix("/styles/").Handler(http.StripPrefix("/styles/", fs))
