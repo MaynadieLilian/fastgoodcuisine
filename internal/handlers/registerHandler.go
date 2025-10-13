@@ -4,10 +4,11 @@ import (
 	"fastgoodcuisine/internal"
 	"fastgoodcuisine/internal/model"
 	"fmt"
-	"golang.org/x/crypto/bcrypt"
 	"html/template"
 	"log"
 	"net/http"
+
+	"golang.org/x/crypto/bcrypt"
 )
 
 func RegisterHandler(w http.ResponseWriter, r *http.Request) {
@@ -29,10 +30,11 @@ func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 			Email    string
 			Username string
 		}{
-			Error:    "Les mots de passe ne correspondent pas",
+			Error:    "The password confirmation does not match",
 			Email:    email,
 			Username: username,
 		}
+		log.Print(data.Error)
 		err := t.Execute(w, data)
 		if err != nil {
 			log.Printf("template execution error: %s", err)

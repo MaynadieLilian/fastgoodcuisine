@@ -14,15 +14,22 @@
             <p>Rejoignez notre communauté de passionnés de cuisine</p>
         </div>
 
+        {{if .Error}}
+        <div class="error-message">
+            <span class="error-icon">⚠️</span>
+            <span>{{.Error}}</span>
+        </div>
+        {{end}}
+
         <form class="register-form" action="/" method="POST">
             <div class="form-group">
                 <label for="username">Nom d'utilisateur</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" value="{{.Username}}" required>
             </div>
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" value="{{.Email}}" required>
             </div>
 
             <div class="form-group">
