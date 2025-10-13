@@ -34,7 +34,8 @@ func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 			Email:    email,
 			Username: username,
 		}
-		log.Print(data.Error)
+		w.WriteHeader(http.StatusUnauthorized)
+		log.Printf("Error user input: %s", data.Error)
 		err := t.Execute(w, data)
 		if err != nil {
 			log.Printf("template execution error: %s", err)
@@ -54,5 +55,6 @@ func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Printf("error while registering user: %s", err)
 	}
+	log.Print("User registered successfully")
 	http.Redirect(w, r, "/", http.StatusSeeOther)
 }

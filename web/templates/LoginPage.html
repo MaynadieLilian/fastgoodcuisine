@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connexion - FastGoodCuisine</title>
-  <link rel="stylesheet" href="../styles/RegisterPage.css">
+  <link rel="stylesheet" href="../styles/LoginPage.css">
 </head>
 <body>
 <div class="container">
@@ -13,6 +13,13 @@
       <h1>FastGoodCuisine</h1>
       <p>Connectez-vous pour retrouver vos recettes préférées</p>
     </div>
+
+      {{if .Error}}
+      <div class="error-message">
+          <span class="error-icon">⚠️</span>
+          <span>{{.Error}}</span>
+      </div>
+      {{end}}
 
     <form class="register-form" action="/login" method="POST">
       <div class="form-group">
