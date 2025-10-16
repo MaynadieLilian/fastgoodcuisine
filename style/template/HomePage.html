@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Saveurs Partagées - Forum de Recettes</title>
+    <link rel="stylesheet" href="../HomePage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo-circle">
+                    <span class="logo-text">S</span>
+                </div>
+                <h1 class="site-title">Les Saveurs Partagées</h1>
+            </div>
+            <nav class="nav">
+                <a href="#recettes" class="nav-link">Recettes</a>
+                <a href="#poster" class="nav-link">Partager</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-container">
+        <h2 class="hero-title">
+            Partagez vos recettes,<br>inspirez la communauté
+        </h2>
+        <p class="hero-text">
+            Un espace chaleureux où les passionnés de cuisine se retrouvent pour échanger leurs meilleures créations culinaires.
+        </p>
+        <a href="#poster" class="hero-button">
+            Partager une recette
+        </a>
+    </div>
+</section>
+
+<section id="poster" class="form-section">
+    <div class="form-container">
+        <div class="section-header">
+            <span class="badge">Nouvelle recette</span>
+            <h3 class="section-title">Partagez votre création</h3>
+            <p class="section-subtitle">Inspirez la communauté avec votre recette préférée</p>
+        </div>
+
+        <form class="recipe-form" onsubmit="ajouterRecette(event)">
+            <div class="form-group">
+                <label for="titre" class="form-label">Titre de la recette</label>
+                <input
+                        type="text"
+                        id="titre"
+                        name="titre"
+                        required
+                        placeholder="Ex: Tarte aux pommes de grand-mère"
+                        class="form-input"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="auteur" class="form-label">Votre nom</label>
+                <input
+                        type="text"
+                        id="auteur"
+                        name="auteur"
+                        required
+                        placeholder="Ex: Marie Dupont"
+                        class="form-input"
+                >
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="temps" class="form-label">Temps de préparation</label>
+                    <input
+                            type="text"
+                            id="temps"
+                            name="temps"
+                            required
+                            placeholder="Ex: 45 min"
+                            class="form-input"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="difficulte" class="form-label">Difficulté</label>
+                    <select
+                            id="difficulte"
+                            name="difficulte"
+                            required
+                            class="form-input"
+                    >
+                        <option value="">Sélectionner</option>
+                        <option value="Facile">Facile</option>
+                        <option value="Moyen">Moyen</option>
+                        <option value="Difficile">Difficile</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="ingredients" class="form-label">Ingrédients</label>
+                <textarea
+                        id="ingredients"
+                        name="ingredients"
+                        rows="4"
+                        required
+                        placeholder="Listez les ingrédients (un par ligne)"
+                        class="form-textarea"
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="instructions" class="form-label">Instructions</label>
+                <textarea
+                        id="instructions"
+                        name="instructions"
+                        rows="6"
+                        required
+                        placeholder="Décrivez les étapes de préparation..."
+                        class="form-textarea"
+                ></textarea>
+            </div>
+
+            <button type="submit" class="submit-button">
+                Publier ma recette
+            </button>
+        </form>
+    </div>
+</section>
+
+<section id="recettes" class="recipes-section">
+    <div class="recipes-container">
+        <div class="section-header">
+            <span class="badge">Communauté</span>
+            <h3 class="section-title">Recettes partagées</h3>
+            <p class="section-subtitle">Découvrez les créations de notre communauté</p>
+        </div>
+
+        <div id="liste-recettes" class="recipes-grid">
+            <article class="recipe-card">
+                <div class="recipe-image gradient-1">
+                    <span class="recipe-emoji">🥖</span>
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-meta">
+                        <span class="difficulty-badge">Facile</span>
+                        <span class="time-badge">⏱️ 30 min</span>
+                    </div>
+                    <h4 class="recipe-title">Pain maison traditionnel</h4>
+                    <p class="recipe-author">Par Sophie Martin</p>
+                    <div class="recipe-section">
+                        <p class="recipe-section-title">Ingrédients:</p>
+                        <p class="recipe-section-text">Farine, eau, levure, sel, huile d'olive</p>
+                    </div>
+                    <div class="recipe-section">
+                        <p class="recipe-section-title">Instructions:</p>
+                        <p class="recipe-section-text">Mélanger tous les ingrédients. Pétrir pendant 10 minutes. Laisser lever 1h. Cuire à 220°C pendant 25 minutes.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="recipe-card">
+                <div class="recipe-image gradient-2">
+                    <span class="recipe-emoji">🥗</span>
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-meta">
+                        <span class="difficulty-badge">Facile</span>
+                        <span class="time-badge">⏱️ 15 min</span>
+                    </div>
+                    <h4 class="recipe-title">Salade César revisitée</h4>
+                    <p class="recipe-author">Par Jean Dubois</p>
+                    <div class="recipe-section">
+                        <p class="recipe-section-title">Ingrédients:</p>
+                        <p class="recipe-section-text">Laitue romaine, poulet grillé, parmesan, croûtons, sauce César maison</p>
+                    </div>
+                    <div class="recipe-section">
+                        <p class="recipe-section-title">Instructions:</p>
+                        <p class="recipe-section-text">Laver et couper la laitue. Griller le poulet. Préparer la sauce avec anchois, ail et citron. Assembler et servir frais.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="recipe-card">
+                <div class="recipe-image gradient-3">
+                    <span class="recipe-emoji">🍰</span>
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-meta">
+                        <span class="difficulty-badge">Moyen</span>
+                        <span class="time-badge">⏱️ 60 min</span>
+                    </div>
+                    <h4 class="recipe-title">Gâteau au chocolat fondant</h4>
+                    <p class="recipe-author">Par Claire Rousseau</p>
+                    <div class="recipe-section">
+                        <p class="recipe-section-title">Ingrédients:</p>
+                        <p class="recipe-section-text">Chocolat noir, beurre, œufs, sucre, farine, levure</p>
+                    </div>
+                    <div class="recipe-section">
+                        <p class="recipe-section-title">Instructions:</p>
+                        <p class="recipe-section-text">Faire fondre le chocolat et le beurre. Battre les œufs avec le sucre. Mélanger le tout. Cuire 25 min à 180°C.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h5 class="footer-title">Les Saveurs Partagées</h5>
+                <p class="footer-text">Une communauté passionnée de cuisine qui partage ses meilleures recettes.</p>
+            </div>
+            <div class="footer-column">
+                <h6 class="footer-heading">Navigation</h6>
+                <ul class="footer-links">
+                    <li><a href="#recettes" class="footer-link">Recettes</a></li>
+                    <li><a href="#poster" class="footer-link">Partager</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h6 class="footer-heading">Contact</h6>
+                <p class="footer-text">contact@saveurs-partagees.fr</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Les Saveurs Partagées. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

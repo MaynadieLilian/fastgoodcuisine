@@ -1,0 +1,486 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #0f172a;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+.font-serif {
+    font-family: "Cormorant Garamond", serif;
+}
+
+.header {
+    background-color: #1e293b;
+    border-bottom: 1px solid #334155;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-circle {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-text {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.site-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: white;
+}
+
+.nav {
+    display: none;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .nav {
+        display: flex;
+    }
+}
+
+.nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.hero {
+    background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+    color: white;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .hero {
+        padding: 6rem 1.5rem;
+    }
+}
+
+.hero-container {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.hero-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: 3.75rem;
+    }
+}
+
+.hero-text {
+    font-size: 1.125rem;
+    color: #bfdbfe;
+    margin-bottom: 2rem;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+@media (min-width: 640px) {
+    .hero-text {
+        font-size: 1.25rem;
+    }
+}
+
+.hero-button {
+    display: inline-block;
+    background-color: #2563eb;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.badge {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+.form-section {
+    padding: 4rem 1rem;
+    background-color: #1e293b;
+}
+
+@media (min-width: 640px) {
+    .form-section {
+        padding: 5rem 1.5rem;
+    }
+}
+
+.form-container {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 640px) {
+    .section-title {
+        font-size: 2.25rem;
+    }
+}
+
+.section-subtitle {
+    color: #cbd5e1;
+    font-size: 1.125rem;
+}
+
+.recipe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .form-row {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #e2e8f0;
+    margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #334155;
+    background-color: #1e293b;
+    color: #e2e8f0;
+    transition: all 0.3s ease;
+    font-family: "Inter", sans-serif;
+}
+
+.form-textarea {
+    resize: none;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.submit-button {
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 1.125rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.recipes-section {
+    padding: 4rem 1rem;
+    background-color: #0f172a;
+}
+
+@media (min-width: 640px) {
+    .recipes-section {
+        padding: 5rem 1.5rem;
+    }
+}
+
+.recipes-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.recipes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .recipes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .recipes-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.recipe-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(59, 130, 246, 0.3);
+}
+
+.recipe-image {
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gradient-1 {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+}
+
+.gradient-2 {
+    background: linear-gradient(135deg, #164e63 0%, #1e40af 100%);
+}
+
+.gradient-3 {
+    background: linear-gradient(135deg, #312e81 0%, #1e3a8a 100%);
+}
+
+.recipe-emoji {
+    font-size: 4rem;
+}
+
+.recipe-content {
+    padding: 1.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.difficulty-badge {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #60a5fa;
+    background-color: #1e3a8a;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+}
+
+.time-badge {
+    font-size: 0.875rem;
+    color: #94a3b8;
+}
+
+.recipe-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.recipe-author {
+    color: #94a3b8;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.recipe-section {
+    border-top: 1px solid #334155;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.recipe-section-title {
+    font-size: 0.875rem;
+    color: #e2e8f0;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.recipe-section-text {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+.footer {
+    background-color: #020617;
+    color: white;
+    padding: 3rem 1rem;
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-heading {
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.footer-text {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-link {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid #1e293b;
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #94a3b8;
+}
