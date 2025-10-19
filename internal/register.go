@@ -2,6 +2,7 @@ package internal
 
 import (
 	"encoding/json"
+	"errors"
 	"fastgoodcuisine/internal/model"
 	"os"
 	"sync"
@@ -17,6 +18,11 @@ func Register(user model.User) error {
 		err = json.Unmarshal(fileData, &users)
 		if err != nil {
 			return err
+		}
+	}
+	for _, data := range users {
+		if data.Email == user.Email {
+			return errors.New("email already used")
 		}
 	}
 	users = append(users, user)

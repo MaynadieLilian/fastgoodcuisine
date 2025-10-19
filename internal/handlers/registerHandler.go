@@ -3,7 +3,6 @@ package handlers
 import (
 	"fastgoodcuisine/internal"
 	"fastgoodcuisine/internal/model"
-	"fmt"
 	"html/template"
 	"log"
 	"net/http"
@@ -26,13 +25,9 @@ func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 	passwordConfirm := r.FormValue("password_confirm")
 	if passwordConfirm != password {
 		data := struct {
-			Error    string
-			Email    string
-			Username string
+			Error string
 		}{
-			Error:    "The password confirmation does not match",
-			Email:    email,
-			Username: username,
+			Error: "The password confirmation does not match",
 		}
 		w.WriteHeader(http.StatusUnauthorized)
 		log.Printf("Error user input: %s", data.Error)
@@ -53,7 +48,17 @@ func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	err = internal.Register(user)
 	if err != nil {
-		fmt.Printf("error while registering user: %s", err)
+		data := struct {
+			Error string
+		}{
+			Error: "Email already used",
+		}
+		log.Printf("error while registering user: %s", err)
+		err := t.Execute(w, data)
+		if err != nil {
+			log.Printf("template execution error: %s", err)
+		}
+		return
 	}
 	log.Print("User registered successfully")
 	http.Redirect(w, r, "/", http.StatusSeeOther)
