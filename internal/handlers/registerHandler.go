@@ -22,7 +22,7 @@ func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 	email := r.FormValue("email")
 	username := r.FormValue("username")
 	password := r.FormValue("password")
-	passwordConfirm := r.FormValue("password_confirm")
+	passwordConfirm := r.FormValue("passwordConfirm")
 	if passwordConfirm != password {
 		data := struct {
 			Error string
