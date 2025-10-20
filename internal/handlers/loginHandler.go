@@ -51,5 +51,5 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	log.Printf("connected : %s", user.Email)
-	http.Redirect(w, r, "/", http.StatusSeeOther)
+	http.Redirect(w, r, "/homePage", http.StatusSeeOther)
 }

@@ -61,5 +61,5 @@ func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	log.Print("User registered successfully")
-	http.Redirect(w, r, "/", http.StatusSeeOther)
+	http.Redirect(w, r, "/homePage", http.StatusSeeOther)
 }
